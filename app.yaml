@@ -1,0 +1,20 @@
+runtime: php74
+runtime_config:
+  document_root: .
+handlers:
+  - url: /css
+    static_dir: css
+  # - url: /.*
+  #   script: auto
+  # Serve php scripts.
+  # - url: /(.+\.php)$
+  #   script: \1
+  # - url: /(.+\.php)$
+  #   script: \1
+  # - url: /.*
+  #   script: index.php
+# env_variables:
+#   MYSQL_HOST: 'mysql:unix_socket=/cloudsql/myjobapp:us-central1:mydbinstid'
+#   MYSQL_DB: 'job_db'
+#   MYSQL_USER: 'root'
+#   MYSQL_PASS: 'abcd'
