@@ -23,6 +23,7 @@ require_once 'helpers/system_helper.php';
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     
+    <script src="https://cdn.ckeditor.com/ckeditor5/10.0.1/classic/ckeditor.js"></script>
     <!-- Custom styles for this template -->
     <link href="css/styles.css" rel="stylesheet">
     <title><?php echo SITE_TITLE; ?></title>

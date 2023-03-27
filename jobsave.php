@@ -29,7 +29,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
         $form_data['job_title'] = sanitize_input($job_details->job_title ?? '');
         $form_data['company'] = sanitize_input($job_details->company ?? '');
         $form_data['category_id'] = $job_details->category_id ?? '';
-        $form_data['description'] = sanitize_input($job_details->description  ?? '');
+        $form_data['description'] = $job_details->description  ?? '';
+        // $form_data['description'] = sanitize_input($job_details->description  ?? '');
         $form_data['location'] = sanitize_input($job_details->location ?? '');
         $form_data['salary'] = sanitize_input($job_details->salary  ?? '');
         $form_data['contact_user'] = sanitize_input($job_details->contact_user  ?? '');
@@ -40,12 +41,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
         if ($_POST['submit'] == 'Update') {
             $page_function = "Update";
         }
-    
+
         //create POST form_data in array
         $form_data['job_title'] = sanitize_input($_POST['job_title'] ?? '');
         $form_data['company'] = sanitize_input($_POST['company'] ?? '');
         $form_data['category_id'] = $_POST['category'] ?? '';
-        $form_data['description'] = sanitize_input($_POST['description']  ?? '');
+        $form_data['description'] = $_POST['description']  ?? '';
+        // $form_data['description'] = sanitize_input($_POST['description']  ?? '');
         $form_data['location'] = sanitize_input($_POST['location'] ?? '');
         $form_data['salary'] = sanitize_input($_POST['salary']  ?? '');
         $form_data['contact_user'] = sanitize_input($_POST['contact_user']  ?? '');
@@ -154,4 +156,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
     <br>
     <a href="/" class="btn btn-primary btn-block">Back</a>
 </form>
+<!-- Script -->
+<script>
+    ClassicEditor
+        .create(document.querySelector('#description'), {
+            toolbar: ['undo', 'redo', 'bold', 'italic', 'numberedList', 'bulletedList']
+        })
+        .then(editor => {
+            editor.ui.view.editable.element.style.height = '100px';
+        })
+        .catch(error => {
+            console.log(error);
+        });
+</script>
 <?php include './templates/inc/footer.php'; ?>
