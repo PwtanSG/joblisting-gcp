@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
         $form_data['job_title'] = sanitize_input($_POST['job_title'] ?? '');
         $form_data['company'] = sanitize_input($_POST['company'] ?? '');
         $form_data['category_id'] = $_POST['category'] ?? '';
-        $form_data['description'] = nl2br(sanitize_input($_POST['description']  ?? ''));
+        $form_data['description'] = sanitize_input($_POST['description']  ?? '');
         $form_data['location'] = sanitize_input($_POST['location'] ?? '');
         $form_data['salary'] = sanitize_input($_POST['salary']  ?? '');
         $form_data['contact_user'] = sanitize_input($_POST['contact_user']  ?? '');
